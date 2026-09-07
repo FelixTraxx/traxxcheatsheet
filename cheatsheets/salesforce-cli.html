@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salesforce CLI Cheatsheet — Traxx Cheatsheet</title>
+  <meta name="description" content="Most used Salesforce CLI (sf) commands: project setup, org auth, scratch orgs, retrieve and deploy." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo">T</span>
+        <span>Traxx Cheatsheet</span>
+      </a>
+      <nav class="breadcrumbs">
+        <a href="../index.html">Home</a> / Salesforce CLI
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Salesforce CLI Cheatsheet</h1>
+    <p class="page-subtitle">The most used <code>sf</code> commands, ready to copy and paste.</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="command-search"
+        placeholder="Filter commands (e.g. &quot;scratch&quot;, &quot;deploy&quot;, &quot;org&quot;)&hellip;"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="placeholder-panel">
+      <h2>Fill in your values</h2>
+      <p>Enter your own values below and every matching command updates automatically.</p>
+      <div class="placeholder-fields">
+        <label>
+          <span>Project Directory Name</span>
+          <input type="text" data-placeholder-key="project-directory-name" placeholder="my-project" autocomplete="off" />
+        </label>
+        <label>
+          <span>Org Alias</span>
+          <input type="text" data-placeholder-key="org-alias" placeholder="my-org" autocomplete="off" />
+        </label>
+        <label>
+          <span>Scratch Org Alias</span>
+          <input type="text" data-placeholder-key="scratch-org-alias" placeholder="my-scratch-org" autocomplete="off" />
+        </label>
+        <label>
+          <span>DevHub Org Alias</span>
+          <input type="text" data-placeholder-key="devhub-org-alias" placeholder="my-devhub" autocomplete="off" />
+        </label>
+      </div>
+    </div>
+
+    <div class="command-list">
+      <div class="command-card" data-search="create a project directory sf project generate name">
+        <h3>Create a project directory</h3>
+        <div class="command-row">
+          <code>sf project generate --name <span class="placeholder" data-placeholder-key="project-directory-name">&lt;Project Directory Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="authorize an org using a browser sf org login web alias">
+        <h3>Authorize an Org using a Browser</h3>
+        <div class="command-row">
+          <code>sf org login web --alias <span class="placeholder" data-placeholder-key="org-alias">&lt;Org Alias&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="authorize an org making it the default org sf org login web alias set-default">
+        <h3>Authorize an Org making it the default org</h3>
+        <div class="command-row">
+          <code>sf org login web --alias <span class="placeholder" data-placeholder-key="org-alias">&lt;Org Alias&gt;</span> --set-default</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="create scratch org that expires after 30 days sf org create scratch duration-days alias set-default target-dev-hub">
+        <h3>Create Scratch org that expires after 30 days</h3>
+        <div class="command-row">
+          <code>sf org create scratch --duration-days=30 --alias <span class="placeholder" data-placeholder-key="scratch-org-alias">&lt;Scratch Org Alias&gt;</span> --set-default --target-dev-hub</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="retrieve source from org preview sf project retrieve preview">
+        <h3>Retrieve source from org preview</h3>
+        <div class="command-row">
+          <code>sf project retrieve preview</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="actually retrieve source from org sf project retrieve start">
+        <h3>Actually retrieve source from org</h3>
+        <div class="command-row">
+          <code>sf project retrieve start</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="deploy changed source to org sf project deploy start">
+        <h3>Deploy changed source to org</h3>
+        <div class="command-row">
+          <code>sf project deploy start</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="update version of the salesforce cli sf update">
+        <h3>Update version of the Salesforce CLI</h3>
+        <div class="command-row">
+          <code>sf update</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="delete a scratch org sf org delete scratch target-org">
+        <h3>Delete a scratch org</h3>
+        <div class="command-row">
+          <code>sf org delete scratch --target-org <span class="placeholder" data-placeholder-key="scratch-org-alias">&lt;Scratch Org Alias&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="list your orgs sf org list">
+        <h3>List your orgs</h3>
+        <div class="command-row">
+          <code>sf org list</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="open the org in the default browser sf org open">
+        <h3>Open the Org in the default browser</h3>
+        <div class="command-row">
+          <code>sf org open</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="set your default org sf config set target-org">
+        <h3>Set your default org</h3>
+        <div class="command-row">
+          <code>sf config set target-org <span class="placeholder" data-placeholder-key="org-alias">&lt;Org Alias&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="set your default devhub org sf config set target-dev-hub">
+        <h3>Set your default DevHub org</h3>
+        <div class="command-row">
+          <code>sf config set target-dev-hub=<span class="placeholder" data-placeholder-key="devhub-org-alias">&lt;DevHub Org Alias&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="no-results" id="no-results">No commands match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    Traxx Cheatsheet &middot; Built for quick CLI reference
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

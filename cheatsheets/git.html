@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Cheatsheet — Traxx Cheatsheet</title>
+  <meta name="description" content="Most used git commands: branching, staging, committing, merging, stashing, and remotes." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo">T</span>
+        <span>Traxx Cheatsheet</span>
+      </a>
+      <nav class="breadcrumbs">
+        <a href="../index.html">Home</a> / Git
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Git Cheatsheet</h1>
+    <p class="page-subtitle">The most used <code>git</code> commands, ready to copy and paste.</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="command-search"
+        placeholder="Filter commands (e.g. &quot;branch&quot;, &quot;stash&quot;, &quot;commit&quot;)&hellip;"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="placeholder-panel">
+      <h2>Fill in your values</h2>
+      <p>Enter your own values below and every matching command updates automatically.</p>
+      <div class="placeholder-fields">
+        <label>
+          <span>Repository URL</span>
+          <input type="text" data-placeholder-key="repository-url" placeholder="git@github.com:org/repo.git" autocomplete="off" />
+        </label>
+        <label>
+          <span>Branch Name</span>
+          <input type="text" data-placeholder-key="branch-name" placeholder="feature/my-branch" autocomplete="off" />
+        </label>
+        <label>
+          <span>File Name</span>
+          <input type="text" data-placeholder-key="file-name" placeholder="src/index.js" autocomplete="off" />
+        </label>
+        <label>
+          <span>Commit Message</span>
+          <input type="text" data-placeholder-key="commit-message" placeholder="Fix login bug" autocomplete="off" />
+        </label>
+      </div>
+    </div>
+
+    <div class="command-list">
+      <div class="command-card" data-search="clone a repository git clone repository url">
+        <h3>Clone a repository</h3>
+        <div class="command-row">
+          <code>git clone <span class="placeholder" data-placeholder-key="repository-url">&lt;Repository URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="check the status of your working directory git status">
+        <h3>Check the status of your working directory</h3>
+        <div class="command-row">
+          <code>git status</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="stage a file for commit git add file name">
+        <h3>Stage a file for commit</h3>
+        <div class="command-row">
+          <code>git add <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="stage all changes git add all">
+        <h3>Stage all changes</h3>
+        <div class="command-row">
+          <code>git add .</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="commit staged changes git commit message">
+        <h3>Commit staged changes</h3>
+        <div class="command-row">
+          <code>git commit -m "<span class="placeholder" data-placeholder-key="commit-message">&lt;Commit Message&gt;</span>"</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="view a condensed commit history git log oneline">
+        <h3>View a condensed commit history</h3>
+        <div class="command-row">
+          <code>git log --oneline</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="create and switch to a new branch git checkout branch name">
+        <h3>Create and switch to a new branch</h3>
+        <div class="command-row">
+          <code>git checkout -b <span class="placeholder" data-placeholder-key="branch-name">&lt;Branch Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="switch to an existing branch git checkout branch name">
+        <h3>Switch to an existing branch</h3>
+        <div class="command-row">
+          <code>git checkout <span class="placeholder" data-placeholder-key="branch-name">&lt;Branch Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="list all local branches git branch">
+        <h3>List all local branches</h3>
+        <div class="command-row">
+          <code>git branch</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="push a branch to the remote and track it git push origin branch name">
+        <h3>Push a branch to the remote and track it</h3>
+        <div class="command-row">
+          <code>git push -u origin <span class="placeholder" data-placeholder-key="branch-name">&lt;Branch Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="pull the latest changes from the remote git pull">
+        <h3>Pull the latest changes from the remote</h3>
+        <div class="command-row">
+          <code>git pull</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="merge a branch into the current branch git merge branch name">
+        <h3>Merge a branch into the current branch</h3>
+        <div class="command-row">
+          <code>git merge <span class="placeholder" data-placeholder-key="branch-name">&lt;Branch Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="stash your uncommitted changes git stash">
+        <h3>Stash your uncommitted changes</h3>
+        <div class="command-row">
+          <code>git stash</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="re-apply your most recent stash git stash pop">
+        <h3>Re-apply your most recent stash</h3>
+        <div class="command-row">
+          <code>git stash pop</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="discard local changes to a file git checkout file name">
+        <h3>Discard local changes to a file</h3>
+        <div class="command-row">
+          <code>git checkout -- <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="delete a local branch git branch delete branch name">
+        <h3>Delete a local branch</h3>
+        <div class="command-row">
+          <code>git branch -d <span class="placeholder" data-placeholder-key="branch-name">&lt;Branch Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="show configured remotes git remote">
+        <h3>Show configured remotes</h3>
+        <div class="command-row">
+          <code>git remote -v</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="undo the last commit but keep the changes staged git reset soft head">
+        <h3>Undo the last commit but keep the changes staged</h3>
+        <div class="command-row">
+          <code>git reset --soft HEAD~1</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="no-results" id="no-results">No commands match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    Traxx Cheatsheet &middot; Built for quick CLI reference
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docker Cheatsheet — Traxx Cheatsheet</title>
+  <meta name="description" content="Most used Docker commands: images, containers, logs, exec, and compose." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo">T</span>
+        <span>Traxx Cheatsheet</span>
+      </a>
+      <nav class="breadcrumbs">
+        <a href="../index.html">Home</a> / Docker
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Docker Cheatsheet</h1>
+    <p class="page-subtitle">The most used <code>docker</code> commands, ready to copy and paste.</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="command-search"
+        placeholder="Filter commands (e.g. &quot;image&quot;, &quot;container&quot;, &quot;compose&quot;)&hellip;"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="placeholder-panel">
+      <h2>Fill in your values</h2>
+      <p>Enter your own values below and every matching command updates automatically.</p>
+      <div class="placeholder-fields">
+        <label>
+          <span>Image Name</span>
+          <input type="text" data-placeholder-key="image-name" placeholder="my-app" autocomplete="off" />
+        </label>
+        <label>
+          <span>Container Name</span>
+          <input type="text" data-placeholder-key="container-name" placeholder="my-app-container" autocomplete="off" />
+        </label>
+      </div>
+    </div>
+
+    <div class="command-list">
+      <div class="command-card" data-search="build an image from the current directory docker build tag image name">
+        <h3>Build an image from the current directory</h3>
+        <div class="command-row">
+          <code>docker build -t <span class="placeholder" data-placeholder-key="image-name">&lt;Image Name&gt;</span> .</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="list local images docker images">
+        <h3>List local images</h3>
+        <div class="command-row">
+          <code>docker images</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="run a container in the background docker run detached name container image">
+        <h3>Run a container in the background</h3>
+        <div class="command-row">
+          <code>docker run -d --name <span class="placeholder" data-placeholder-key="container-name">&lt;Container Name&gt;</span> <span class="placeholder" data-placeholder-key="image-name">&lt;Image Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="list running containers docker ps">
+        <h3>List running containers</h3>
+        <div class="command-row">
+          <code>docker ps</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="list all containers including stopped ones docker ps all">
+        <h3>List all containers, including stopped ones</h3>
+        <div class="command-row">
+          <code>docker ps -a</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="stop a running container docker stop container name">
+        <h3>Stop a running container</h3>
+        <div class="command-row">
+          <code>docker stop <span class="placeholder" data-placeholder-key="container-name">&lt;Container Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="start a stopped container docker start container name">
+        <h3>Start a stopped container</h3>
+        <div class="command-row">
+          <code>docker start <span class="placeholder" data-placeholder-key="container-name">&lt;Container Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="remove a container docker rm container name">
+        <h3>Remove a container</h3>
+        <div class="command-row">
+          <code>docker rm <span class="placeholder" data-placeholder-key="container-name">&lt;Container Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="remove an image docker rmi image name">
+        <h3>Remove an image</h3>
+        <div class="command-row">
+          <code>docker rmi <span class="placeholder" data-placeholder-key="image-name">&lt;Image Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="follow a container's logs docker logs follow container name">
+        <h3>Follow a container's logs</h3>
+        <div class="command-row">
+          <code>docker logs -f <span class="placeholder" data-placeholder-key="container-name">&lt;Container Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="open a shell inside a running container docker exec interactive tty container name bash">
+        <h3>Open a shell inside a running container</h3>
+        <div class="command-row">
+          <code>docker exec -it <span class="placeholder" data-placeholder-key="container-name">&lt;Container Name&gt;</span> /bin/bash</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="pull an image from a registry docker pull image name">
+        <h3>Pull an image from a registry</h3>
+        <div class="command-row">
+          <code>docker pull <span class="placeholder" data-placeholder-key="image-name">&lt;Image Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="push an image to a registry docker push image name">
+        <h3>Push an image to a registry</h3>
+        <div class="command-row">
+          <code>docker push <span class="placeholder" data-placeholder-key="image-name">&lt;Image Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="remove unused containers images and networks docker system prune">
+        <h3>Remove unused containers, images, and networks</h3>
+        <div class="command-row">
+          <code>docker system prune -f</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="start services defined in docker-compose.yml docker compose up detached">
+        <h3>Start services defined in docker-compose.yml</h3>
+        <div class="command-row">
+          <code>docker compose up -d</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="stop services defined in docker-compose.yml docker compose down">
+        <h3>Stop services defined in docker-compose.yml</h3>
+        <div class="command-row">
+          <code>docker compose down</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="follow logs for docker compose services docker compose logs follow">
+        <h3>Follow logs for docker compose services</h3>
+        <div class="command-row">
+          <code>docker compose logs -f</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="no-results" id="no-results">No commands match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    Traxx Cheatsheet &middot; Built for quick CLI reference
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
