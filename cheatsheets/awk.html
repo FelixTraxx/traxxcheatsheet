@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>awk Cheatsheet — Traxx Cheatsheet</title>
+  <meta name="description" content="Most used awk commands: printing columns, field separators, filtering, and sums. Copy-paste ready with your own values filled in." />
+  <link rel="canonical" href="https://cli-cheatsheets.com/cheatsheets/awk.html" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0f1115" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Traxx Cheatsheet" />
+  <meta property="og:url" content="https://cli-cheatsheets.com/cheatsheets/awk.html" />
+  <meta property="og:title" content="awk Cheatsheet — Traxx Cheatsheet" />
+  <meta property="og:description" content="Most used awk commands: printing columns, field separators, filtering, and sums. Copy-paste ready with your own values filled in." />
+  <meta property="og:image" content="https://cli-cheatsheets.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="awk Cheatsheet — Traxx Cheatsheet" />
+  <meta name="twitter:description" content="Most used awk commands: printing columns, field separators, filtering, and sums. Copy-paste ready with your own values filled in." />
+  <meta name="twitter:image" content="https://cli-cheatsheets.com/assets/og-image.jpg" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cli-cheatsheets.com/" },
+      { "@type": "ListItem", "position": 2, "name": "awk", "item": "https://cli-cheatsheets.com/cheatsheets/awk.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "awk Cheatsheet",
+    "description": "Most used awk commands: printing columns, field separators, filtering, and sums.",
+    "url": "https://cli-cheatsheets.com/cheatsheets/awk.html",
+    "isPartOf": { "@type": "WebSite", "name": "Traxx Cheatsheet", "url": "https://cli-cheatsheets.com/" }
+  }
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978968771019805"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo">T</span>
+        <span>Traxx Cheatsheet</span>
+      </a>
+      <nav class="breadcrumbs">
+        <a href="../index.html">Home</a> / awk
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">awk Cheatsheet</h1>
+    <p class="page-subtitle">The most used <code>awk</code> commands, ready to copy and paste.</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="command-search"
+        placeholder="Filter commands (e.g. &quot;column&quot;, &quot;separator&quot;, &quot;sum&quot;)&hellip;"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="placeholder-panel">
+      <h2>Fill in your values</h2>
+      <p>Enter your own values below and every matching command updates automatically.</p>
+      <div class="placeholder-fields">
+        <label>
+          <span>File Name</span>
+          <input type="text" data-placeholder-key="file-name" placeholder="data.csv" autocomplete="off" />
+        </label>
+        <label>
+          <span>Field Separator</span>
+          <input type="text" data-placeholder-key="field-separator" placeholder="," autocomplete="off" />
+        </label>
+        <label>
+          <span>Pattern</span>
+          <input type="text" data-placeholder-key="pattern" placeholder="ERROR" autocomplete="off" />
+        </label>
+        <label>
+          <span>Column Number</span>
+          <input type="text" data-placeholder-key="column-number" placeholder="2" autocomplete="off" />
+        </label>
+      </div>
+    </div>
+
+    <div class="command-list">
+      <div class="command-card" data-search="print the first column awk print file name">
+        <h3>Print the first column</h3>
+        <div class="command-row">
+          <code>awk '{print $1}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print a specific column by number awk print column number file name">
+        <h3>Print a specific column by number</h3>
+        <div class="command-row">
+          <code>awk '{print $<span class="placeholder" data-placeholder-key="column-number">&lt;Column Number&gt;</span>}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print multiple columns awk print file name">
+        <h3>Print multiple columns</h3>
+        <div class="command-row">
+          <code>awk '{print $1, $3}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="use a custom field separator awk field separator file name">
+        <h3>Use a custom field separator</h3>
+        <div class="command-row">
+          <code>awk -F'<span class="placeholder" data-placeholder-key="field-separator">&lt;Field Separator&gt;</span>' '{print $1}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print lines matching a pattern awk pattern file name">
+        <h3>Print lines matching a pattern</h3>
+        <div class="command-row">
+          <code>awk '/<span class="placeholder" data-placeholder-key="pattern">&lt;Pattern&gt;</span>/' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print lines that do not match a pattern awk not pattern file name">
+        <h3>Print lines that do NOT match a pattern</h3>
+        <div class="command-row">
+          <code>awk '!/<span class="placeholder" data-placeholder-key="pattern">&lt;Pattern&gt;</span>/' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print the number of fields on each line awk nf file name">
+        <h3>Print the number of fields on each line</h3>
+        <div class="command-row">
+          <code>awk '{print NF}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print the total number of lines awk nr end file name">
+        <h3>Print the total number of lines</h3>
+        <div class="command-row">
+          <code>awk 'END{print NR}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print each line with its line number awk nr file name">
+        <h3>Print each line with its line number</h3>
+        <div class="command-row">
+          <code>awk '{print NR, $0}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print the last column awk nf file name">
+        <h3>Print the last column</h3>
+        <div class="command-row">
+          <code>awk '{print $NF}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="sum the values in a column awk sum end file name">
+        <h3>Sum the values in a column</h3>
+        <div class="command-row">
+          <code>awk '{sum += $<span class="placeholder" data-placeholder-key="column-number">&lt;Column Number&gt;</span>} END {print sum}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print lines where a column matches an exact value awk field separator column number pattern file name">
+        <h3>Print lines where a column matches an exact value</h3>
+        <div class="command-row">
+          <code>awk -F'<span class="placeholder" data-placeholder-key="field-separator">&lt;Field Separator&gt;</span>' '$<span class="placeholder" data-placeholder-key="column-number">&lt;Column Number&gt;</span> == "<span class="placeholder" data-placeholder-key="pattern">&lt;Pattern&gt;</span>"' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print rows where a numeric column exceeds a value awk column number file name">
+        <h3>Print rows where a numeric column exceeds a value</h3>
+        <div class="command-row">
+          <code>awk '$<span class="placeholder" data-placeholder-key="column-number">&lt;Column Number&gt;</span> &gt; 100' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print unique values from a column awk file name sort unique">
+        <h3>Print unique values from a column</h3>
+        <div class="command-row">
+          <code>awk '{print $1}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span> | sort -u</code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="count occurrences of each value in a column awk count end file name">
+        <h3>Count occurrences of each value in a column</h3>
+        <div class="command-row">
+          <code>awk '{count[$1]++} END {for (v in count) print v, count[v]}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print everything between two matching patterns awk range file name">
+        <h3>Print everything between two matching patterns</h3>
+        <div class="command-row">
+          <code>awk '/start/,/end/' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="set the output field separator awk begin ofs file name">
+        <h3>Set the output field separator</h3>
+        <div class="command-row">
+          <code>awk -F'<span class="placeholder" data-placeholder-key="field-separator">&lt;Field Separator&gt;</span>' 'BEGIN{OFS="\t"} {print $1, $2}' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="no-results" id="no-results">No commands match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    Traxx Cheatsheet &middot; Built for quick CLI reference
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

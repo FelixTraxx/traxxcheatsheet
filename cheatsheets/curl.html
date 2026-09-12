@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>curl Cheatsheet — Traxx Cheatsheet</title>
+  <meta name="description" content="Most used curl commands: requests, headers, auth, downloads, and uploads. Copy-paste ready with your own values filled in." />
+  <link rel="canonical" href="https://cli-cheatsheets.com/cheatsheets/curl.html" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0f1115" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Traxx Cheatsheet" />
+  <meta property="og:url" content="https://cli-cheatsheets.com/cheatsheets/curl.html" />
+  <meta property="og:title" content="curl Cheatsheet — Traxx Cheatsheet" />
+  <meta property="og:description" content="Most used curl commands: requests, headers, auth, downloads, and uploads. Copy-paste ready with your own values filled in." />
+  <meta property="og:image" content="https://cli-cheatsheets.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="curl Cheatsheet — Traxx Cheatsheet" />
+  <meta name="twitter:description" content="Most used curl commands: requests, headers, auth, downloads, and uploads. Copy-paste ready with your own values filled in." />
+  <meta name="twitter:image" content="https://cli-cheatsheets.com/assets/og-image.jpg" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cli-cheatsheets.com/" },
+      { "@type": "ListItem", "position": 2, "name": "curl", "item": "https://cli-cheatsheets.com/cheatsheets/curl.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "curl Cheatsheet",
+    "description": "Most used curl commands: requests, headers, auth, downloads, and uploads.",
+    "url": "https://cli-cheatsheets.com/cheatsheets/curl.html",
+    "isPartOf": { "@type": "WebSite", "name": "Traxx Cheatsheet", "url": "https://cli-cheatsheets.com/" }
+  }
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978968771019805"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo">T</span>
+        <span>Traxx Cheatsheet</span>
+      </a>
+      <nav class="breadcrumbs">
+        <a href="../index.html">Home</a> / curl
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">curl Cheatsheet</h1>
+    <p class="page-subtitle">The most used <code>curl</code> commands, ready to copy and paste.</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="command-search"
+        placeholder="Filter commands (e.g. &quot;header&quot;, &quot;post&quot;, &quot;download&quot;)&hellip;"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="placeholder-panel">
+      <h2>Fill in your values</h2>
+      <p>Enter your own values below and every matching command updates automatically.</p>
+      <div class="placeholder-fields">
+        <label>
+          <span>URL</span>
+          <input type="text" data-placeholder-key="url" placeholder="https://api.example.com/users" autocomplete="off" />
+        </label>
+        <label>
+          <span>Output File</span>
+          <input type="text" data-placeholder-key="output-file" placeholder="response.json" autocomplete="off" />
+        </label>
+        <label>
+          <span>Header</span>
+          <input type="text" data-placeholder-key="header" placeholder="Authorization: Bearer TOKEN" autocomplete="off" />
+        </label>
+        <label>
+          <span>Data (JSON body)</span>
+          <input type="text" data-placeholder-key="data" placeholder="{&quot;name&quot;:&quot;value&quot;}" autocomplete="off" />
+        </label>
+        <label>
+          <span>Username</span>
+          <input type="text" data-placeholder-key="username" placeholder="myuser" autocomplete="off" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="text" data-placeholder-key="password" placeholder="mypassword" autocomplete="off" />
+        </label>
+        <label>
+          <span>File Name</span>
+          <input type="text" data-placeholder-key="file-name" placeholder="upload.zip" autocomplete="off" />
+        </label>
+      </div>
+    </div>
+
+    <div class="command-list">
+      <div class="command-card" data-search="make a get request curl url">
+        <h3>Make a GET request</h3>
+        <div class="command-row">
+          <code>curl <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="follow redirects curl location url">
+        <h3>Follow redirects</h3>
+        <div class="command-row">
+          <code>curl -L <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="save the response to a file curl output file url">
+        <h3>Save the response to a file</h3>
+        <div class="command-row">
+          <code>curl -o <span class="placeholder" data-placeholder-key="output-file">&lt;Output File&gt;</span> <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="download and save using the remote filename curl o url">
+        <h3>Download and save using the remote filename</h3>
+        <div class="command-row">
+          <code>curl -O <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="send a post request with a json body curl x post header data url">
+        <h3>Send a POST request with a JSON body</h3>
+        <div class="command-row">
+          <code>curl -X POST -H "Content-Type: application/json" -d '<span class="placeholder" data-placeholder-key="data">&lt;Data (JSON body)&gt;</span>' <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="send a custom request header curl header url">
+        <h3>Send a custom request header</h3>
+        <div class="command-row">
+          <code>curl -H "<span class="placeholder" data-placeholder-key="header">&lt;Header&gt;</span>" <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="include response headers in the output curl include url">
+        <h3>Include response headers in the output</h3>
+        <div class="command-row">
+          <code>curl -i <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="fetch only the response headers curl head url">
+        <h3>Fetch only the response headers</h3>
+        <div class="command-row">
+          <code>curl -I <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="make a silent request with no progress meter curl silent url">
+        <h3>Make a silent request (no progress meter)</h3>
+        <div class="command-row">
+          <code>curl -s <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="authenticate with basic auth curl user username password url">
+        <h3>Authenticate with basic auth</h3>
+        <div class="command-row">
+          <code>curl -u <span class="placeholder" data-placeholder-key="username">&lt;Username&gt;</span>:<span class="placeholder" data-placeholder-key="password">&lt;Password&gt;</span> <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="show verbose request and response details curl verbose url">
+        <h3>Show verbose request and response details</h3>
+        <div class="command-row">
+          <code>curl -v <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="send a put request with a body curl x put data url">
+        <h3>Send a PUT request with a body</h3>
+        <div class="command-row">
+          <code>curl -X PUT -d '<span class="placeholder" data-placeholder-key="data">&lt;Data (JSON body)&gt;</span>' <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="send a delete request curl x delete url">
+        <h3>Send a DELETE request</h3>
+        <div class="command-row">
+          <code>curl -X DELETE <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="upload a file as form data curl form file name url">
+        <h3>Upload a file as form data</h3>
+        <div class="command-row">
+          <code>curl -F "file=@<span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span>" <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="retry a failed request a few times curl retry url">
+        <h3>Retry a failed request a few times</h3>
+        <div class="command-row">
+          <code>curl --retry 3 <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="set a request timeout curl max time url">
+        <h3>Set a request timeout (in seconds)</h3>
+        <div class="command-row">
+          <code>curl --max-time 30 <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="fail silently on server errors curl fail url">
+        <h3>Fail silently on server errors (no HTML error body)</h3>
+        <div class="command-row">
+          <code>curl -f <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="resume a partial download curl continue at output url">
+        <h3>Resume a partial download</h3>
+        <div class="command-row">
+          <code>curl -C - -O <span class="placeholder" data-placeholder-key="url">&lt;URL&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="no-results" id="no-results">No commands match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    Traxx Cheatsheet &middot; Built for quick CLI reference
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

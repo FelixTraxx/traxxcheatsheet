@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sed Cheatsheet — Traxx Cheatsheet</title>
+  <meta name="description" content="Most used sed commands: find and replace, in-place edits, deleting lines, and printing ranges. Copy-paste ready with your own values filled in." />
+  <link rel="canonical" href="https://cli-cheatsheets.com/cheatsheets/sed.html" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0f1115" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Traxx Cheatsheet" />
+  <meta property="og:url" content="https://cli-cheatsheets.com/cheatsheets/sed.html" />
+  <meta property="og:title" content="sed Cheatsheet — Traxx Cheatsheet" />
+  <meta property="og:description" content="Most used sed commands: find and replace, in-place edits, deleting lines, and printing ranges. Copy-paste ready with your own values filled in." />
+  <meta property="og:image" content="https://cli-cheatsheets.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="sed Cheatsheet — Traxx Cheatsheet" />
+  <meta name="twitter:description" content="Most used sed commands: find and replace, in-place edits, deleting lines, and printing ranges. Copy-paste ready with your own values filled in." />
+  <meta name="twitter:image" content="https://cli-cheatsheets.com/assets/og-image.jpg" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cli-cheatsheets.com/" },
+      { "@type": "ListItem", "position": 2, "name": "sed", "item": "https://cli-cheatsheets.com/cheatsheets/sed.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "sed Cheatsheet",
+    "description": "Most used sed commands: find and replace, in-place edits, deleting lines, and printing ranges.",
+    "url": "https://cli-cheatsheets.com/cheatsheets/sed.html",
+    "isPartOf": { "@type": "WebSite", "name": "Traxx Cheatsheet", "url": "https://cli-cheatsheets.com/" }
+  }
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978968771019805"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="logo">T</span>
+        <span>Traxx Cheatsheet</span>
+      </a>
+      <nav class="breadcrumbs">
+        <a href="../index.html">Home</a> / sed
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">sed Cheatsheet</h1>
+    <p class="page-subtitle">The most used <code>sed</code> commands, ready to copy and paste.</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="command-search"
+        placeholder="Filter commands (e.g. &quot;replace&quot;, &quot;delete&quot;, &quot;in place&quot;)&hellip;"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="placeholder-panel">
+      <h2>Fill in your values</h2>
+      <p>Enter your own values below and every matching command updates automatically.</p>
+      <div class="placeholder-fields">
+        <label>
+          <span>File Name</span>
+          <input type="text" data-placeholder-key="file-name" placeholder="notes.txt" autocomplete="off" />
+        </label>
+        <label>
+          <span>Search Pattern</span>
+          <input type="text" data-placeholder-key="search-pattern" placeholder="foo" autocomplete="off" />
+        </label>
+        <label>
+          <span>Replacement</span>
+          <input type="text" data-placeholder-key="replacement" placeholder="bar" autocomplete="off" />
+        </label>
+        <label>
+          <span>Line Number</span>
+          <input type="text" data-placeholder-key="line-number" placeholder="5" autocomplete="off" />
+        </label>
+      </div>
+    </div>
+
+    <div class="command-list">
+      <div class="command-card" data-search="replace the first match on each line sed search replacement file name">
+        <h3>Replace the first match on each line</h3>
+        <div class="command-row">
+          <code>sed 's/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>/' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="replace all matches on each line global sed search replacement file name">
+        <h3>Replace all matches on each line (global)</h3>
+        <div class="command-row">
+          <code>sed 's/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>/g' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="replace all matches and edit the file in place sed i search replacement file name">
+        <h3>Replace all matches and edit the file in place</h3>
+        <div class="command-row">
+          <code>sed -i 's/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>/g' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="edit in place and keep a backup of the original sed i bak search replacement file name">
+        <h3>Edit in place and keep a backup of the original</h3>
+        <div class="command-row">
+          <code>sed -i.bak 's/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>/g' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="delete lines matching a pattern sed d search file name">
+        <h3>Delete lines matching a pattern</h3>
+        <div class="command-row">
+          <code>sed '/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/d' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print only lines matching a pattern sed n p search file name">
+        <h3>Print only lines matching a pattern</h3>
+        <div class="command-row">
+          <code>sed -n '/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/p' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print a specific line number sed n p line number file name">
+        <h3>Print a specific line number</h3>
+        <div class="command-row">
+          <code>sed -n '<span class="placeholder" data-placeholder-key="line-number">&lt;Line Number&gt;</span>p' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="delete a specific line number sed d line number file name">
+        <h3>Delete a specific line number</h3>
+        <div class="command-row">
+          <code>sed '<span class="placeholder" data-placeholder-key="line-number">&lt;Line Number&gt;</span>d' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print a range of lines sed n p file name">
+        <h3>Print a range of lines</h3>
+        <div class="command-row">
+          <code>sed -n '1,10p' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="insert a line before a match sed i search replacement file name">
+        <h3>Insert a line before a match</h3>
+        <div class="command-row">
+          <code>sed '/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/i\<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="append a line after a match sed a search replacement file name">
+        <h3>Append a line after a match</h3>
+        <div class="command-row">
+          <code>sed '/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/a\<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="replace a match only on a specific line number sed line number s search replacement file name">
+        <h3>Replace a match only on a specific line number</h3>
+        <div class="command-row">
+          <code>sed '<span class="placeholder" data-placeholder-key="line-number">&lt;Line Number&gt;</span>s/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>/' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="remove blank lines sed d file name">
+        <h3>Remove blank lines</h3>
+        <div class="command-row">
+          <code>sed '/^$/d' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="case insensitive replace sed search replacement gi file name">
+        <h3>Case-insensitive replace</h3>
+        <div class="command-row">
+          <code>sed 's/<span class="placeholder" data-placeholder-key="search-pattern">&lt;Search Pattern&gt;</span>/<span class="placeholder" data-placeholder-key="replacement">&lt;Replacement&gt;</span>/gi' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="print the total number of lines sed n file name">
+        <h3>Print the total number of lines</h3>
+        <div class="command-row">
+          <code>sed -n '$=' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+
+      <div class="command-card" data-search="trim leading and trailing whitespace sed file name">
+        <h3>Trim leading and trailing whitespace</h3>
+        <div class="command-row">
+          <code>sed 's/^[ \t]*//;s/[ \t]*$//' <span class="placeholder" data-placeholder-key="file-name">&lt;File Name&gt;</span></code>
+          <button class="copy-btn" data-label="Copy">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="no-results" id="no-results">No commands match your search.</p>
+  </main>
+
+  <footer class="site-footer">
+    Traxx Cheatsheet &middot; Built for quick CLI reference
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
